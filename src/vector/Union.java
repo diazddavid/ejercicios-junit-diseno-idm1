@@ -11,7 +11,11 @@ public class Union {
 	* @throws NullPointerException If a or b is null
 	*/
 	
-	public static VectorUnion (Vector a, Vector b){
+	public static Vector union (Vector a, Vector b){
+		return b;
+	}
+	
+	public static void main (String []argv) {
 		
 	}
 }
