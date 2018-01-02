@@ -13,12 +13,19 @@ public class Union {
 	*/
 	
 	public static Vector union (Vector a, Vector b){
-		Vector union = new Vector();
-		union.setSize(a.size()+b.size());
-		Collections.copy(union, a);
-		Collections.copy(union, b);
-	
 		
+		Vector union = new Vector();
+		for (Object Obj : a) {
+			if(!union.contains(Obj)) {
+				union.add(Obj);
+			}
+		}
+		for (Object Obj : b) {
+			if(!union.contains(Obj)) {
+				union.add(Obj);
+			}
+		}
+		union.setSize(a.size()+b.size());
 		return union;
 	}
 
