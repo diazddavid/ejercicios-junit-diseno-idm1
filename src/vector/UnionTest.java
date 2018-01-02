@@ -3,6 +3,8 @@ package vector;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Vector;
 import org.junit.Test;
 
@@ -32,4 +34,19 @@ public class UnionTest {
 	      assertTrue("Union contains 5",Union.union(a, b).contains(5)); 
 	      assertTrue("Union contains 6",Union.union(a, b).contains(6));
 	   }
+	
+	@Test public void unionSetElementInOne() {
+		Set a = new HashSet();
+		a.add("Prueba1");
+		a.add("Prueba2");
+		Set b = new HashSet();
+		int unionSize = a.size()+b.size();
+		
+	    assertTrue("Union contains Prueba1",Union.unionSet(a, b).contains("Prueba1")); 
+	    assertTrue("Union contains Prueba2",Union.unionSet(a, b).contains("Prueba2"));
+	}
+	
+	@Test public void unionSetRepeated() {
+		
+	}
 }

@@ -1,6 +1,8 @@
 package vector;
 
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Vector;
 
 public class Union {
@@ -28,7 +30,40 @@ public class Union {
 		union.setSize(a.size()+b.size());
 		return union;
 	}
-
+	
+	/**
+	* @return
+	New Set (different from a and b) that contains the
+	*
+	union set of a and b
+	* @param
+	a Set of elements. It can contain the null element. It can’t
+	*
+	contain repeated elements
+	* @param
+	b Set of elements. It can contain the null element. It can’t
+	*
+	contain repeated elements
+	* @throws
+	NullPointerException If a or b is null
+	*/
+	
+	public static Set unionSet (Set a, Set b) {
+		Set union = new HashSet();
+		for (Object Obj : a) {
+			if(!union.contains(Obj)) {
+				union.add(Obj);
+			}
+		}
+		for (Object Obj : b) {
+			if(!union.contains(Obj)) {
+				union.add(Obj);
+			}
+		}
+		
+		return union;
+	}
+	
 	public static void main (String []argv) {
 		
 	}
