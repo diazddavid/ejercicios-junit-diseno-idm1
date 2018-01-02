@@ -3,6 +3,7 @@ package vector;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
@@ -47,6 +48,14 @@ public class UnionTest {
 	}
 	
 	@Test public void unionSetRepeated() {
-		
+		Set a = new HashSet();
+		a.add("Prueba1");
+		Set b = new HashSet();
+		b.add("Prueba1");
+		b.add("Prueba2");
+		int unionSize = a.size()+b.size();
+
+		assertEquals("Each element appear once", 1, Collections.frequency(Union.unionSet(a, b), "Prueba1"));
+		assertEquals("Each element appear once", 1, Collections.frequency(Union.unionSet(a, b), "Prueba2"));
 	}
 }
