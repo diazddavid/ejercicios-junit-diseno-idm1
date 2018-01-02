@@ -1,5 +1,6 @@
 package vector;
 
+import java.util.Collections;
 import java.util.Vector;
 
 public class Union {
@@ -12,9 +13,15 @@ public class Union {
 	*/
 	
 	public static Vector union (Vector a, Vector b){
-		return b;
-	}
+		Vector union = new Vector();
+		union.setSize(a.size()+b.size());
+		Collections.copy(union, a);
+		Collections.copy(union, b);
 	
+		
+		return union;
+	}
+
 	public static void main (String []argv) {
 		
 	}
