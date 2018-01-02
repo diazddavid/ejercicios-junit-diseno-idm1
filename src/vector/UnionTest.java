@@ -19,4 +19,17 @@ public class UnionTest {
 	      assertTrue("Union contains 5",Union.union(a, b).contains(5)); 
 	      assertTrue("Union contains 6",Union.union(a, b).contains(6));
 	   }
+	
+	@Test public void elementsInBoth()
+	   {
+	      Vector a = new Vector(3);
+	      a.addElement(5);
+	      Vector b = new Vector(3);
+	      b.addElement(6);
+	      int unionSize = a.size()+b.size();
+	      
+	      assertEquals("Vector has the same size", unionSize, Union.union(a, b).size());
+	      assertTrue("Union contains 5",Union.union(a, b).contains(5)); 
+	      assertTrue("Union contains 6",Union.union(a, b).contains(6));
+	   }
 }
